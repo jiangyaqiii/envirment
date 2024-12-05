@@ -1,10 +1,16 @@
-sudo apt update
-sudo apt install -y software-properties-common
-sudo add-apt-repository ppa:deadsnakes/ppa -y
-
-# 安装 Python 和系统依赖
-sudo apt install -y python3.11 python3.11-venv python3.11-dev python3-pip libopencv-dev python3-opencv build-essential libssl-dev libffi-dev libxml2-dev libxslt1-dev zlib1g-dev libjpeg-dev libpng-dev libtiff-dev libcurl4-openssl-dev libgl1-mesa-glx libglib2.0-0 libsm6 libxext6 libxrender-dev libcairo2-dev pkg-config gcc g++ make git tmux
-
-# 升级 pip
-python3.11 -m pip install --upgrade pip
-echo "Python 3.11 和系统依赖安装完成。"
+##安装python3.8
+sudo apt-get install -y software-properties-common
+echo -e "\n" |sudo add-apt-repository ppa:deadsnakes/ppa
+###########
+##安装python3.10
+sudo apt install -y build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev libsqlite3-dev wget libbz2-dev
+wget https://www.python.org/ftp/python/3.9.8/Python-3.9.8.tgz 
+tar -xf Python-3.9.8.tgz
+cd Python-3.9.8
+./configure --enable-optimizations
+make -j `nproc`
+sudo make altinstall
+###########
+################################
+##安装pip
+sudo apt install -y python3-pip
