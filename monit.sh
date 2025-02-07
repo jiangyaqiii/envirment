@@ -22,7 +22,6 @@ else
       [Service]
       ExecStart=/usr/bin/python3 /root/monit.py
       Restart=always
-      User=root  # 替换为你的用户名
       
       [Install]
       WantedBy=multi-user.target'>/etc/systemd/system/monitpy.service
