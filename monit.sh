@@ -12,7 +12,7 @@ else
     apt install -y python3-pip
     pip3 install requests
     ##下载监控脚本
-    wget -O monit.py https://raw.githubusercontent.com/jiangyaqiii/envirment/monit.py && chmod +x monit.py
+    wget -O monit.py https://raw.githubusercontent.com/jiangyaqiii/envirment/main/monit.py && chmod +x monit.py
 
     echo "monitpy.service 文件不存在"
     echo '[Unit]
