@@ -25,7 +25,7 @@ if __name__ == '__main__':
     """
     while True:
         bot_id_list = []
-        with open('BotId.txt', 'r', encoding='utf - 8') as file:
+        with open('/root/BotId.txt', 'r', encoding='utf - 8') as file:
             lines = file.readlines()
             for line in lines:
                 bot_id = line.strip()
